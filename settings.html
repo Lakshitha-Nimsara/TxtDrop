@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Settings – TextDrop</title>
+  <meta name="description" content="Customize your TextDrop experience. Change theme, font size, spellcheck and more." />
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link rel="shortcut icon" href="icon.png" />
+  <link rel="apple-touch-icon" href="icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav>
+  <a class="nav-brand" href="index.html">Text<span>Drop</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="tool.html">✏️ Editor</a>
+    <a href="settings.html">Settings</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <button class="hamburger" onclick="toggleMob()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="index.html"    onclick="closeMob()">🏠 Home</a>
+  <a href="tool.html"     onclick="closeMob()">✏️ Editor</a>
+  <a href="settings.html" onclick="closeMob()">⚙️ Settings</a>
+  <a href="about.html"    onclick="closeMob()">ℹ️ About</a>
+  <a href="contact.html"  onclick="closeMob()">📬 Contact</a>
+  <a href="privacy.html"  onclick="closeMob()">🔒 Privacy Policy</a>
+  <a href="terms.html"    onclick="closeMob()">📄 Terms of Service</a>
+</div>
+
+<!-- ── PAGE CONTENT ── -->
+<div class="page-wrap">
+  <div class="container">
+
+    <div class="page-title">
+      <h2>⚙️ Settings</h2>
+      <p>Customize your TextDrop experience. All settings are saved to your browser automatically.</p>
+    </div>
+
+    <!-- Appearance -->
+    <div class="settings-section">
+      <h3>🎨 Appearance</h3>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <h4>Light Mode</h4>
+          <p>Switch between dark (default) and light theme</p>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="themeToggle" onchange="toggleTheme()" />
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <h4>Editor Font Size</h4>
+          <p>Adjust the font size of the text editor</p>
+        </div>
+        <select class="setting-select" id="fontSizeSelect" onchange="changeFontSize()">
+          <option value="13">Small (13px)</option>
+          <option value="15" selected>Medium (15px)</option>
+          <option value="17">Large (17px)</option>
+          <option value="20">X-Large (20px)</option>
+        </select>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <h4>Editor Line Height</h4>
+          <p>Change spacing between lines in the editor</p>
+        </div>
+        <select class="setting-select" id="lineHeightSelect" onchange="changeLineHeight()">
+          <option value="1.4">Compact</option>
+          <option value="1.7" selected>Normal</option>
+          <option value="2.0">Relaxed</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Editor -->
+    <div class="settings-section">
+      <h3>✏️ Editor</h3>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <h4>Spell Check</h4>
+          <p>Red underlines highlight spelling mistakes as you type</p>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="spellToggle" checked onchange="toggleSpell()" />
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <h4>Default Filename</h4>
+          <p>Set a default name used when saving .txt files</p>
+        </div>
+        <input
+          class="filename-input"
+          id="defaultFilename"
+          type="text"
+          placeholder="my-text"
+          maxlength="60"
+          oninput="saveDefaultFilename()"
+          style="width:160px;"
+        />
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <h4>Clear Editor on Save</h4>
+          <p>Automatically clear the editor after saving a file</p>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="clearOnSave" onchange="saveSetting('clearOnSave', this.checked)" />
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Reset -->
+    <div class="settings-section">
+      <h3>🔄 Reset</h3>
+      <div class="setting-row">
+        <div class="setting-info">
+          <h4>Reset All Settings</h4>
+          <p>Restore all settings to their defaults</p>
+        </div>
+        <button class="btn-secondary" onclick="resetSettings()">Reset to Defaults</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="tool.html">Editor</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </div>
+  <p>&copy; <span id="yr"></span> <span class="footer-brand">TextDrop</span>. All rights reserved.</p>
+  <p style="margin-top:6px;">Contact: <a href="mailto:txtdropping@gmail.com">txtdropping@gmail.com</a></p>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/settings.js"></script>
+</body>
+</html>

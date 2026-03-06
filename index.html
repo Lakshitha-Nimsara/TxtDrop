@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>TextDrop – Free Online Text Editor & Save as TXT</title>
+  <meta name="description" content="TextDrop is a free online text editor. Type anything and instantly save as a .txt file. No login, no sign-up. Fast, simple, and private." />
+  <meta name="keywords" content="online text editor, save as txt, free notepad online, type and save txt, text file download" />
+  <meta property="og:title" content="TextDrop – Free Online Text Editor" />
+  <meta property="og:description" content="Type anything and save as a .txt file instantly. Free, no login required." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link rel="shortcut icon" href="icon.png" />
+  <link rel="apple-touch-icon" href="icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!--
+    GOOGLE ADSENSE: After approval, paste your AdSense script tag here.
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+  -->
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav>
+  <a class="nav-brand" href="index.html">Text<span>Drop</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="tool.html">✏️ Editor</a>
+    <a href="settings.html">Settings</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <button class="hamburger" onclick="toggleMob()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="index.html"    onclick="closeMob()">🏠 Home</a>
+  <a href="tool.html"     onclick="closeMob()">✏️ Editor</a>
+  <a href="settings.html" onclick="closeMob()">⚙️ Settings</a>
+  <a href="about.html"    onclick="closeMob()">ℹ️ About</a>
+  <a href="contact.html"  onclick="closeMob()">📬 Contact</a>
+  <a href="privacy.html"  onclick="closeMob()">🔒 Privacy Policy</a>
+  <a href="terms.html"    onclick="closeMob()">📄 Terms of Service</a>
+</div>
+
+<!-- ── PAGE CONTENT ── -->
+<div class="page-wrap">
+  <div class="container">
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-badge">Free · No Login · Instant Download</div>
+      <h1>Type It.<br/>Save It as <span class="accent">.TXT</span></h1>
+      <p>The simplest online text editor. Write your notes, copy your code, draft your ideas, then download as a <strong>.txt file</strong> with one click. No account needed.</p>
+      <a href="tool.html" class="btn-primary">Open Editor →</a>
+    </div>
+
+    <!-- AdSense slot -->
+    <div class="ad-slot">
+      <!-- INSERT GOOGLE ADSENSE <ins> TAG HERE -->
+    </div>
+
+    <!-- Features -->
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Instant &amp; Fast</h3>
+        <p>No loading screens, no servers, no waiting. Open the page and start typing right away.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>100% Private</h3>
+        <p>Your text never leaves your browser. Nothing is uploaded or stored on any server.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📄</div>
+        <h3>Save as .TXT</h3>
+        <p>Download your text as a clean .txt file with a custom filename or use the default name.</p>
+      </div>
+
+
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Live Word Count</h3>
+        <p>See your character, word, and line count update in real time as you type.</p>
+      </div>
+    </div>
+
+    <!-- How it works -->
+    <div class="how-section">
+      <h2>How it Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h4>Open Editor</h4>
+          <p>Click "Open Editor" and the editor loads instantly.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h4>Type Your Text</h4>
+          <p>Write anything: notes, lists, code, emails, anything.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h4>Name Your File</h4>
+          <p>Enter a custom filename or keep the default name.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h4>Download .TXT</h4>
+          <p>Click Save and your .txt file downloads instantly.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- AdSense slot -->
+    <div class="ad-slot">
+      <!-- INSERT GOOGLE ADSENSE <ins> TAG HERE -->
+    </div>
+
+    <div class="tip-box">
+      <strong>💡 Tip:</strong> Use TextDrop to quickly transfer text between your phone and PC without cables or accounts. Type on one device → save as .txt → share via WhatsApp, email, or cloud storage.
+    </div>
+
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="tool.html">Editor</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </div>
+  <p>&copy; <span id="yr"></span> <span class="footer-brand">TextDrop</span>. All rights reserved.</p>
+  <p style="margin-top:6px;">Contact: <a href="mailto:txtdropping@gmail.com">txtdropping@gmail.com</a></p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

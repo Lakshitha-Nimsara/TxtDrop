@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>About – TextDrop</title>
+  <meta name="description" content="Learn about TextDrop, a free online text editor built to let anyone type and save text files instantly, with no login required." />
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link rel="shortcut icon" href="icon.png" />
+  <link rel="apple-touch-icon" href="icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav>
+  <a class="nav-brand" href="index.html">Text<span>Drop</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="tool.html">✏️ Editor</a>
+    <a href="settings.html">Settings</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <button class="hamburger" onclick="toggleMob()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="index.html"    onclick="closeMob()">🏠 Home</a>
+  <a href="tool.html"     onclick="closeMob()">✏️ Editor</a>
+  <a href="settings.html" onclick="closeMob()">⚙️ Settings</a>
+  <a href="about.html"    onclick="closeMob()">ℹ️ About</a>
+  <a href="contact.html"  onclick="closeMob()">📬 Contact</a>
+  <a href="privacy.html"  onclick="closeMob()">🔒 Privacy Policy</a>
+  <a href="terms.html"    onclick="closeMob()">📄 Terms of Service</a>
+</div>
+
+<!-- ── PAGE CONTENT ── -->
+<div class="page-wrap">
+  <div class="container">
+
+    <div class="about-hero">
+      <div class="about-logo">Text<span>Drop</span></div>
+      <p>TextDrop is a free, simple, and fast online text editor built to solve a real problem: moving text between devices without needing accounts, sync apps, or cables.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>🎯 Our Mission</h3>
+        <p>To give everyone a free, instant, no-login tool for writing and saving plain text. Simple, clean, and useful. No unnecessary features, no paywalls.</p>
+      </div>
+      <div class="about-card">
+        <h3>💡 Why TextDrop?</h3>
+        <p>Many people need to move text from their phone to their PC without syncing apps. TextDrop lets you type, save as .txt, and share that file via WhatsApp, email, USB, or cloud storage.</p>
+      </div>
+      <div class="about-card">
+        <h3>🔒 Your Privacy</h3>
+        <p>TextDrop does not collect any personal data. Everything you type stays entirely in your browser. We do not log, store, or transmit your text to any server.</p>
+      </div>
+      <div class="about-card">
+        <h3>🛠️ Built for Everyone</h3>
+        <p>TextDrop is an independently developed web tool, designed to be genuinely useful for anyone who needs a fast, no-fuss way to write and save plain text, anywhere in the world.</p>
+      </div>
+    </div>
+
+    <!-- AdSense slot -->
+    <div class="ad-slot">
+      <!-- INSERT GOOGLE ADSENSE <ins> TAG HERE -->
+    </div>
+
+    <div class="settings-section" style="text-align:center;">
+      <h3>📬 Get in Touch</h3>
+      <p style="font-size:0.85rem;color:var(--text2);margin-top:10px;">
+        Have a question, suggestion, or feedback?<br/>
+        Email us at: <a href="mailto:txtdropping@gmail.com">txtdropping@gmail.com</a><br/>
+        Or use our <a href="contact.html">Contact page</a>.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="tool.html">Editor</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </div>
+  <p>&copy; <span id="yr"></span> <span class="footer-brand">TextDrop</span>. All rights reserved.</p>
+  <p style="margin-top:6px;">Contact: <a href="mailto:txtdropping@gmail.com">txtdropping@gmail.com</a></p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

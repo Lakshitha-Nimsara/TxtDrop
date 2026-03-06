@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Terms of Service – TextDrop</title>
+  <meta name="description" content="TextDrop Terms of Service. Read the terms and conditions for using TextDrop." />
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link rel="shortcut icon" href="icon.png" />
+  <link rel="apple-touch-icon" href="icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav>
+  <a class="nav-brand" href="index.html">Text<span>Drop</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="tool.html">✏️ Editor</a>
+    <a href="settings.html">Settings</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <button class="hamburger" onclick="toggleMob()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="index.html"    onclick="closeMob()">🏠 Home</a>
+  <a href="tool.html"     onclick="closeMob()">✏️ Editor</a>
+  <a href="settings.html" onclick="closeMob()">⚙️ Settings</a>
+  <a href="about.html"    onclick="closeMob()">ℹ️ About</a>
+  <a href="contact.html"  onclick="closeMob()">📬 Contact</a>
+  <a href="privacy.html"  onclick="closeMob()">🔒 Privacy Policy</a>
+  <a href="terms.html"    onclick="closeMob()">📄 Terms of Service</a>
+</div>
+
+<!-- ── PAGE CONTENT ── -->
+<div class="page-wrap">
+  <div class="container">
+    <div class="legal-content">
+
+      <h2>Terms of Service</h2>
+      <p class="legal-updated">Last updated: January 2025 &nbsp;|&nbsp; TextDrop</p>
+
+      <p>By accessing and using TextDrop, you accept and agree to be bound by the following terms and conditions. Please read them carefully before using the service.</p>
+
+      <h3>1. Use of the Service</h3>
+      <p>TextDrop provides a free online text editor tool that allows users to write and download plain text files. You may use it for personal or professional purposes. You agree to use the service only for lawful purposes and in a manner that does not infringe the rights of others.</p>
+
+      <h3>2. Prohibited Activities</h3>
+      <ul>
+        <li>Using the service to create, store, or distribute illegal content</li>
+        <li>Attempting to exploit, damage, or disrupt the service or its infrastructure</li>
+        <li>Using automated bots or scrapers to access or abuse the site</li>
+        <li>Violating any applicable local, national, or international law or regulation</li>
+        <li>Attempting to gain unauthorized access to any part of the service</li>
+      </ul>
+
+      <h3>3. Intellectual Property</h3>
+      <p>The TextDrop website design, branding, and source code are the intellectual property of TextDrop and are protected by applicable copyright laws. The text content you create using TextDrop belongs entirely to you. We make no claim over any content you write or download through the service.</p>
+
+      <h3>4. Disclaimer of Warranties</h3>
+      <p>TextDrop is provided "as is" and "as available" without any warranties, expressed or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement. We do not warrant that the service will be uninterrupted, error-free, or that any defects will be corrected. Your use of the service is entirely at your own risk.</p>
+
+      <h3>5. Limitation of Liability</h3>
+      <p>In no event shall TextDrop or its operators be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of data, revenue, or goodwill, resulting from your use of, or inability to use, the service, even if we have been advised of the possibility of such damages.</p>
+
+      <h3>6. Third-Party Advertising</h3>
+      <p>TextDrop may display advertisements provided by third-party ad networks, including Google AdSense. These advertisements are subject to the respective terms and privacy policies of those third-party providers. We are not responsible for the content of any third-party advertisements displayed on the site.</p>
+
+      <h3>7. Privacy</h3>
+      <p>Your use of TextDrop is also governed by our <a href="privacy.html">Privacy Policy</a>, which is incorporated into these Terms of Service by reference.</p>
+
+      <h3>8. Changes to These Terms</h3>
+      <p>We reserve the right to modify these Terms of Service at any time. Changes will be posted on this page with an updated date. Your continued use of TextDrop following any changes constitutes your acceptance of the updated terms.</p>
+
+      <h3>9. Governing Law</h3>
+      <p>These terms shall be governed by and construed in accordance with applicable law. By using TextDrop, you agree that any disputes shall be resolved in good faith, and that these terms represent the full understanding between you and TextDrop regarding use of the service.</p>
+
+      <h3>10. Contact</h3>
+      <p>If you have any questions about these Terms of Service, please contact us at <a href="mailto:txtdropping@gmail.com">txtdropping@gmail.com</a>.</p>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="tool.html">Editor</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </div>
+  <p>&copy; <span id="yr"></span> <span class="footer-brand">TextDrop</span>. All rights reserved.</p>
+  <p style="margin-top:6px;">Contact: <a href="mailto:txtdropping@gmail.com">txtdropping@gmail.com</a></p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

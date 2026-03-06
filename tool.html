@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Text Editor – TextDrop</title>
+  <meta name="description" content="Free online text editor. Type and save as a .txt file instantly. No login required." />
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link rel="shortcut icon" href="icon.png" />
+  <link rel="apple-touch-icon" href="icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!--
+    GOOGLE ADSENSE: After approval, paste your AdSense script tag here.
+  -->
+  <style>
+    /* Editor page extra: full-height editor feel */
+    .editor-page-wrap {
+      padding-top: var(--nav-h);
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+    .editor-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 16px 16px 0;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .editor-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    #editor {
+      flex: 1;
+      min-height: 320px;
+      resize: none; /* disable resize on mobile, use flex instead */
+    }
+    .editor-footer-area {
+      padding: 0 16px 16px;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* Desktop: allow resize */
+    @media (min-width: 481px) {
+      #editor { resize: vertical; min-height: 380px; }
+      .editor-page-wrap { display: block; }
+      .editor-main { display: block; padding: 32px 20px 0; }
+      .editor-wrap { display: block; }
+      .editor-footer-area { padding: 0 20px 40px; }
+    }
+
+    /* Mobile: ad slot hidden above editor to save space */
+    @media (max-width: 480px) {
+      .editor-top-ad { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a class="nav-brand" href="index.html">Text<span>Drop</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="tool.html">Editor</a>
+    <a href="settings.html">Settings</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <button class="hamburger" onclick="toggleMob()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="index.html"    onclick="closeMob()">Home</a>
+  <a href="tool.html"     onclick="closeMob()">Editor</a>
+  <a href="settings.html" onclick="closeMob()">Settings</a>
+  <a href="about.html"    onclick="closeMob()">About</a>
+  <a href="contact.html"  onclick="closeMob()">Contact</a>
+  <a href="privacy.html"  onclick="closeMob()">Privacy Policy</a>
+  <a href="terms.html"    onclick="closeMob()">Terms of Service</a>
+</div>
+
+<!-- PAGE: full height flex layout on mobile -->
+<div class="editor-page-wrap">
+
+  <div class="editor-main">
+
+    <!-- Ad slot (hidden on mobile to save screen space) -->
+    <div class="ad-slot editor-top-ad">
+      <!-- INSERT GOOGLE ADSENSE ins TAG HERE -->
+    </div>
+
+    <!-- Header: title + filename + save + clear -->
+    <div class="tool-header">
+      <h2>Text Editor</h2>
+      <div class="tool-controls">
+        <input
+          class="filename-input"
+          id="filenameInput"
+          type="text"
+          placeholder="filename (default: my-text)"
+          maxlength="80"
+          aria-label="File name"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+        />
+        <button class="btn-save" onclick="saveTxt()">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Save .TXT
+        </button>
+        <button class="btn-secondary" onclick="clearEditor()">Clear</button>
+      </div>
+    </div>
+
+    <!-- Editor box -->
+    <div class="editor-wrap">
+
+      <!-- Toolbar: scrollable on mobile -->
+      <div class="editor-toolbar">
+        <div class="toolbar-dots">
+          <div class="dot dot-r"></div>
+          <div class="dot dot-y"></div>
+          <div class="dot dot-g"></div>
+        </div>
+        <div class="toolbar-sep"></div>
+        <button class="tb-btn" onclick="selectAll()">Select All</button>
+        <button class="tb-btn" onclick="copyAll()">Copy All</button>
+        <button class="tb-btn" onclick="pasteText()">Paste</button>
+        <div class="toolbar-sep"></div>
+        <button class="tb-btn" onclick="insertDate()">Date</button>
+        <button class="tb-btn" onclick="insertTime()">Time</button>
+        <div class="toolbar-sep"></div>
+        <span class="tb-label" id="charCount">0 chars</span>
+      </div>
+
+      <!-- The textarea -->
+      <textarea
+        id="editor"
+        placeholder="Start typing here..."
+        oninput="updateCount()"
+        spellcheck="true"
+        aria-label="Text editor"
+        autocorrect="off"
+        autocapitalize="off"
+      ></textarea>
+
+      <div class="editor-footer">
+        <span id="editorStatus">Ready</span>
+        <span class="hide-mobile">Ctrl+S to save</span>
+      </div>
+
+    </div>
+    <!-- end editor-wrap -->
+
+  </div>
+  <!-- end editor-main -->
+
+  <!-- Tip and bottom ad sit outside flex so they don't stretch -->
+  <div class="editor-footer-area">
+    <div class="tip-box">
+      <strong>Tip:</strong> Type your text, set a filename, then tap <strong>Save .TXT</strong> to download. Share the file via WhatsApp, email, or USB.
+    </div>
+
+    <div class="ad-slot">
+      <!-- INSERT GOOGLE ADSENSE ins TAG HERE -->
+    </div>
+  </div>
+
+</div>
+<!-- end editor-page-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="tool.html">Editor</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </div>
+  <p>&copy; <span id="yr"></span> <span class="footer-brand">TextDrop</span>. All rights reserved.</p>
+  <p style="margin-top:5px;">Email: <a href="mailto:txtdropping@gmail.com">txtdropping@gmail.com</a></p>
+</footer>
+
+<div class="save-toast" id="saveToast">File saved!</div>
+
+<script src="js/main.js"></script>
+<script src="js/tool.js"></script>
+<script>
+  // On mobile, show only char count (shorter)
+  (function() {
+    var isMobile = window.innerWidth <= 480;
+    if (isMobile) {
+      window._mobileCount = true;
+    }
+  })();
+</script>
+</body>
+</html>
